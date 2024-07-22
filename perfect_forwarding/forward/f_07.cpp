@@ -1,3 +1,5 @@
+//forwarding lambda
+
 #include <iostream>
 
 class Nec {};
