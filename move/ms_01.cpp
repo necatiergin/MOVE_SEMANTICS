@@ -45,9 +45,9 @@ public:
 int main()
 {
 	Myclass m1{ 47 }; //Myclass(int);
-	auto m2{ m1 }; //cc
-	auto m3{ std::move(m1) }; //mc
-	auto m4{ static_cast<Myclass&&>(m3) }; //mc
+	auto m2{ m1 }; //copy ctor
+	auto m3{ std::move(m1) }; //move ctor
+	auto m4{ static_cast<Myclass&&>(m3) }; //move ctor
 	m3 = m4; //copy assignment
 	m3 = std::move(m4); //move assignment
 }
