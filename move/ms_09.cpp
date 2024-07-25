@@ -1,7 +1,6 @@
 #include <iostream>
 #include <array>
 
-
 class Nec {
 public:
 	Nec() = default;
@@ -18,7 +17,7 @@ public:
 
 int main()
 {
-	std::array<Nec, 5> ax;
+	std::array<Nec, 100> ax;
 	//auto ay = ax; //copy ctor O(n)
 	auto ay = std::move(ax); //move ctor O(n)
 }
