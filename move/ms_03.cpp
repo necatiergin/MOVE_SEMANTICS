@@ -2,7 +2,6 @@
 #include <chrono>
 #include <iostream>
 
-
 class PersonClassic {
 public:
 	PersonClassic(const std::string& name, const std::string& surname)
