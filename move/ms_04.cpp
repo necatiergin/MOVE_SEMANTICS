@@ -27,7 +27,7 @@ MoveOnly foo(int ival)
 {
 	MoveOnly m{ ival};
 
-	return m; //copy elisison or move ctor
+	return m; //copy elisison (NRVO) or move ctor
 }
 
 int main()
