@@ -34,7 +34,7 @@ Myclass foo()
 {
 	Myclass x(12);
 
-	return std::move(x);
+	return std::move(x);  // pessimistic move
 }
 
 
