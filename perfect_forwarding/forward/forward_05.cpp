@@ -11,7 +11,7 @@ public:
 		std::cout << "print()\n";
 	}
 
-	std::string getName()&& 
+	std::string getName()const && 
 	{ 
 		return std::move(name); 
 	}
