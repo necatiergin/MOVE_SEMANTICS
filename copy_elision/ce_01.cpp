@@ -7,7 +7,7 @@ struct A {
 	}
 
 	A(const A&) = delete;
-	A(A&&) = delete;
+	//no move ctor
 };
 
 void foo(A) { }
