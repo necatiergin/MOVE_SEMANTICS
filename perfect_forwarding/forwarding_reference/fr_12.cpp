@@ -1,3 +1,5 @@
+// confilicting params
+
 #include <vector>
 #include <string>
 
@@ -12,5 +14,5 @@ int main()
 	std::vector<std::string> coll;
 	std::string s;
 
-	insert(vec, s); //gecersiz
+	insert(vec, s); //invalid
 }
