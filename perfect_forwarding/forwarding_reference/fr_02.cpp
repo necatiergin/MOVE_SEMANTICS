@@ -1,3 +1,5 @@
+//reference collapsing rules
+
 class Myclass {};
 
 template <typename T>
