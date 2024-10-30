@@ -8,11 +8,10 @@ void func(T&&) //forwarding reference parameter
 }
 
 template <>
-void func(std::string &&) // explicit spec. for string &&
+void func(std::string &&) // explicit spec. for string && - forwarding reference
 {
 	std::cout << "full specialization\n";
 }
-
 
 int main()
 {
