@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 class MoveOnly {
 public:
 	MoveOnly(int)
@@ -20,8 +19,6 @@ public:
 		return *this;
 	}
 };
-
-
 
 MoveOnly foo(int ival)
 {
