@@ -1,3 +1,5 @@
+// deferred perfect returning
+
 template<typename Func, typename... Args>
 decltype(auto) call(Func f, Args&&... args)
 {
