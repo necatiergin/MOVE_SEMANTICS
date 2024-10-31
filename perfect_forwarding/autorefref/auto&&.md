@@ -79,18 +79,48 @@ for ( ; iter != end; ++iter ) {
 }
 ```
 
-Böyle bir dönüşüme dikkat edilmeli. Sık yapılan bişr kodlama hatasına bakalım:
+Böyle bir dönüşüme dikkat edilmeli. Sık yapılan bir kodlama hatasına bakalım:
 
 ```cpp
 #include <vector>
 #include <string>
+#include <iostream>
 
-std::vector<std::string> get_name_vec();
+
+std::vector<std::string> get_name_vec()
+{
+	return { "alican", "velican" };
+}
 
 int main()
 {
-	for (auto c : get_name_vec().at(0)) {
+	for (auto c : get_name_vec().at(0)) { //ub
 		//...
+	}
+}
+```
+
+Yukarıdaki aralık tabanlı _for_ döngüsü için derleyici aşağıdaki gibi bir kod üretecek:
+
+```cpp
+#include <vector>
+#include <string>
+#include <iostream>
+
+std::vector<std::string> get_name_vec()
+{
+	return { "alican", "velican" };
+}
+
+int main()
+{
+	auto&& range = get_name_vec().at(0); 
+	//std::string &range  = get_name_vec().at(0); 
+	auto iter = range.begin(); 
+	auto end = range.end();
+	for (; iter != end; ++iter) {
+		char c = *iter;
+		std::cout << c;
 	}
 }
 ```
