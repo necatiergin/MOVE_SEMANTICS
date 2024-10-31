@@ -1,6 +1,5 @@
 #include <utility>
 
-
 template <typename ...Args>
 void f(Args &&...);
 
