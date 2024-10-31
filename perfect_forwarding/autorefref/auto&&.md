@@ -69,7 +69,7 @@ Derleyicinin yukarıdaki gibi bir aralık tabanlı for döngüsü için aşağı
 ```cpp
 std::vector<Myclass> c;
 
-auto&& range = c; // initialize a universal reference
+auto&& range = c; 
 auto iter = range.begin(); 
 auto end = range.end(); 
 
@@ -78,5 +78,22 @@ for ( ; iter != end; ++iter ) {
 	//...
 }
 ```
+
+Böyle bir dönüşüme dikkat edilmeli. Sık yapılan bişr kodlama hatasına bakalım:
+
+```cpp
+#include <vector>
+#include <string>
+
+std::vector<std::string> get_name_vec();
+
+int main()
+{
+	for (auto c : get_name_vec().at(0)) {
+		//...
+	}
+}
+```
+
 
 
