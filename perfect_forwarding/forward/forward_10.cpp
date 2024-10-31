@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 
-
 template <typename T>
 void foo(T&& r)
 {
