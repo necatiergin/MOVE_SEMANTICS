@@ -53,5 +53,30 @@ auto&& ret = foo(t);
 bar(std::forward<decltype(ret)>(t));
 ```
 
+_auto&&_ aralık tabanlı for döngülerinde de çok önemli bir rol oynar:
+
+```cpp
+class Myclass{};
+
+std::vector<Myclass> c;
+
+for (const auto& m : c) {
+	//...
+}
+```
+Derleyicinin yukarıdaki gibi bir aralık tabanlı for döngüsü için aşağıdaki gibi bir kod ürettiğini düşünebiliriz:
+
+```cpp
+std::vector<Myclass> c;
+
+auto&& range = c; // initialize a universal reference
+auto iter = range.begin(); 
+auto end = range.end(); 
+
+for ( ; pos != end; ++pos ) {
+	const auto& m = *pos;
+	//...
+}
+```
 
 
