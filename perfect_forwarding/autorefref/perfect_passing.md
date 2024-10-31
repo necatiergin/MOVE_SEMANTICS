@@ -46,5 +46,12 @@ int main()
 	Myclass && r4_ = rref_return();
 }
 ```
+Şimdi gecikmeli mükemmel gönderimin nasıl yapılabileceğini artık anlamış oluyoruz:
+
+```cpp
+auto&& ret = foo(t);
+bar(std::forward<decltype(ret)>(t));
+```
+
 
 
