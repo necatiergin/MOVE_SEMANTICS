@@ -1,5 +1,5 @@
 Türden bağımsız _(generic)_ olarak yazılan bir kodda bir fonksiyona çağrı yapmak ve çağrıdan elde ettiğimiz geri dönüş değerini bir başka fonksiyona mükemmel şekilde göndermek istiyoruz. _(perfectly passing the return value of a function)_<br>
-Bunun için özel bie şy yapmamıza gerek yok:
+Bunun için özel bir şey yapmamıza gerek yok:
 
 ```cpp
 bar(foo(t));
