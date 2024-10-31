@@ -1,3 +1,5 @@
+// decltype auto
+
 #include <utility>
 
 class Myclass{};
