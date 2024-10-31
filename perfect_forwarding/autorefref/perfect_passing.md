@@ -17,6 +17,33 @@ Bu bizim istediğimizi sağlamaz. Bir isimle _(identifier)_ oluşturulan _x_ ifa
 auto && r = expr;
 ```
 
+Önce _auto&&_ ile yapılan tür çıkarımı için aşağıdaki kodu inceleyelim:
+
+```cpp
+class Myclass {};
+
+Myclass value_return();
+Myclass& lref_return();
+const Myclass& const_lref_return();
+Myclass&& rref_return();
+
+int main()
+{
+	auto&& r1 = value_return();
+	Myclass&& r1_ = value_return();
+
+	auto&& r2 = lref_return();
+	Myclass &r2_ = lref_return();
+
+	auto&& r3 = const_lref_return();
+	const Myclass& r3_ = const_lref_return();
+	
+	auto&& r4 = rref_return();
+	Myclass && r4_ = rref_return();
+}
+```
+
+
 Buradaki r referansı "universal referanstır. Tür çıkarımı fonksiyon şablonu _"universal reference"_ parametresinde olduğu gibi yapılır.
 
 - eğer _expr_ _T_ türünden _L value_ ise _auto_ yerine _T&_ gelir ve _reference collapsing_ ile _r_ değişkeninin türü _T&_ olur. 
