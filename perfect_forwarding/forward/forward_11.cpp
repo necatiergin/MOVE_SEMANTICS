@@ -1,7 +1,6 @@
 #include <utility>
 #include <memory>
 
-
 template<class T, class... A>
 std::unique_ptr<T> makeUnique(A&&... args)
 {
