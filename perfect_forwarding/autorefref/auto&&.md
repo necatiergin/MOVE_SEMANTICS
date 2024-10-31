@@ -73,8 +73,8 @@ auto&& range = c; // initialize a universal reference
 auto iter = range.begin(); 
 auto end = range.end(); 
 
-for ( ; pos != end; ++pos ) {
-	const auto& m = *pos;
+for ( ; iter != end; ++iter ) {
+	const auto& m = *iter;
 	//...
 }
 ```
