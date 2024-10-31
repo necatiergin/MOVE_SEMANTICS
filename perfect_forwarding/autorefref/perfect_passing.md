@@ -13,7 +13,9 @@ bar(x);
 Bu bizim istediğimizi sağlamaz. Bir isimle _(identifier)_ oluşturulan _x_ ifadesinin değer kategorisi her zaman _Lvalue_'dur. Oysa mükemmel gönderimin sağlanması için ifadenin değer kategorisinin ve _const_'luğunun korunması gerekir.
 İşte bu amaçla dile başka bir öğe eklenmiştir.
 
+```cpp
 auto && r = expr;
+```
 
 Buradaki r referansı "universal referanstır. Tür çıkarımı fonksiyon şablonu _"universal reference"_ parametresinde olduğu gibi yapılır.
 
