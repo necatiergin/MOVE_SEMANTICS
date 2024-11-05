@@ -7,11 +7,11 @@
 template <typename T>
 void print_container(const std::string& name, const T& con)
 {
-	std::cout << name << " (" << con.size() << " elements): ";
-	for (const auto& elem : con) {
-		std::cout << " '" << elem << "'";
-	}
-	std::cout << '\n';
+    std::cout << name << " (" << con.size() << " elements): ";
+    for (const auto& elem : con) {
+        std::cout << "[" << elem << "] ";
+    }
+    std::cout << '\n';
 }
 
 
