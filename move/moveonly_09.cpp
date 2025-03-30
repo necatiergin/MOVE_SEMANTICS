@@ -8,5 +8,5 @@ int main()
 {
 	usptr uptr = std::make_unique<std::string>("necati");
 
-	std::vector<usptr> vec(5, uptr); //gecersiz
+	std::vector<usptr> vec(5, uptr); //invalid
 }
