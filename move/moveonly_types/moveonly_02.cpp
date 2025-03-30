@@ -1,4 +1,3 @@
-
 class MoveOnly {
 public:
 	MoveOnly();
