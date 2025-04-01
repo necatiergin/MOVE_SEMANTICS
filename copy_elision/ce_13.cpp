@@ -1,4 +1,4 @@
-// derleyicinin NRVO uygulayamadığı senaryolar
+// No NRVO
 
 #include <iostream>
 #include <cstdlib>
