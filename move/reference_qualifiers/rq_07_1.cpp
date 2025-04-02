@@ -3,7 +3,7 @@
 
 class Sentence {
 public:
-	Sentence(const char *ps) : mstr(ps) {}
+	Sentence(const char* ps) : mstr(ps) {}
 
 	const std::string& str()
 	{
@@ -23,7 +23,14 @@ Sentence get_sentence()
 
 int main()
 {
-	for (auto c : get_sentence().str()) {	 
-		std::cout.put(c); //temporary object already destroyed!
+	//for (auto c : get_sentence().str()) {
+	//	std::cout.put(c); 
+	//}
+
+	auto&& range = get_sentence().str();
+
+	for (auto iter = range.begin(), end = range.end(); iter != end; ++iter) {
+		auto c = *iter;
+		std::cout.put(c); 
 	}
 }
