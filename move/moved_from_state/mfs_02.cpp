@@ -19,7 +19,7 @@ int main()
 	std::string sline;
 	std::vector<std::string> svec;
 
-	//asagidaki dongude moved-from durumundaki nesne tekrar kullaniliyor
+	//the object in moved from state is reassigned
 
 	while (getline(ifs, sline))
 		svec.push_back(move(sline));
