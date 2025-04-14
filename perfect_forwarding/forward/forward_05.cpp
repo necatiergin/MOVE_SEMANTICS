@@ -6,26 +6,35 @@ class Person
 private:
 	std::string name;
 public:
-	void print() const 
+	void print() const
 	{
 		std::cout << "print()\n";
 	}
 
-	std::string getName()const && 
-	{ 
-		return std::move(name); 
+	std::string getName()const&&
+	{
+		std::cout << "const&&\n";
+		return std::move(name);
 	}
 
-	const std::string& getName() const& 
+	const std::string& getName() const&
 	{
-		return name; 
+		std::cout << "const&\n";
+		return name;
 	}
 };
 
 template<typename T>
 void foo(T&& x)
 {
-	x.print(); 
-	auto s1 = x.getName(); 
-	auto s2 = std::forward<T>(x).getName(); 
+	x.print();
+	auto s = std::forward<T>(x).getName();
 }
+
+int main()
+{
+	Person p;
+	foo(p);
+}
+
+
