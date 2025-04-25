@@ -1,8 +1,7 @@
 #include <string>
 #include <algorithm>
 
-//iki fonksiyonu karsilastirin
-
+//compare two functions
 void func(const std::string &s)
 {
 	auto s_copy{ s };
