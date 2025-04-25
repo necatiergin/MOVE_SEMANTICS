@@ -1,6 +1,6 @@
-!---
-
+/*
 std::vector’ün push_back implementasyonu, kabaca şöyle çalışır (basitleştirilmiş):
+*/
 
 void push_back(T&& value) {
     if (size_ < capacity_) {
@@ -11,6 +11,7 @@ void push_back(T&& value) {
     }
 }
 
+<!---
 new (data_ + size_) T(std::move(value)) ifadesi, vector’ün belleğinde yeni bir Person nesnesi oluşturur ve move constructor’ı çağırır.
 
 Eğer move constructor istisna fırlatırsa, bu yapı (placement new) tamamlanamaz ve size_ artırılmaz. 
