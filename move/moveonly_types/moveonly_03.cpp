@@ -17,6 +17,6 @@ int main()
 
 	//MoveOnly m2 = m1; //error - copy ctor deleted
 	MoveOnly m3 = std::move(m1); //valid
-	//m1 = m3;  //error - copy assignmentdeleted
+	//m1 = m3;  //error - copy assignment deleted
 	m1 = std::move(m1);  //valid
 }
