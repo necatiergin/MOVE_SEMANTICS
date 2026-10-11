@@ -9,9 +9,13 @@ int main()
 		std::cout << i << ' ';
 	std::cout << '\n';
 
-	auto&& range = ivec;
-	for (auto ibeg = begin(range), iend = end(range); ibeg != iend; ++ibeg) {
-		auto i = *ibeg;
-		std::cout << i << ' ';
+	{
+		auto&& range = ivec;
+		auto ibeg = range.begin();
+		auto iend = range.end();
+		for (; ibeg != iend; ++ibeg) {
+			auto i = *ibeg;
+			std::cout << i << ' ';
+		}
 	}
 }
