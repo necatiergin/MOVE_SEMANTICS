@@ -1,26 +1,27 @@
-#include <iostream>
 #include <type_traits>
+#include <iostream>
 
 class Nec {};
 
 template<typename T>
-void foo(const char *p,  T&&)
+void foo(T&&)
 {
 	if constexpr (std::is_lvalue_reference_v<T>) {
-		std::cout << "argument is '" << p << "'" << " has come here and it is L value\n";
+		std::cout << "argument is L value\n";
 	}
 	else {
-		std::cout << "argument is '" << p << "'" << " has come here and it is R value\n";
+		std::cout << "argument is R value\n";
 	}
 }
 
 int main()
 {
-	Nec n;
-	const Nec cn;
+	Nec nec;
+	const Nec cnec;
 
-	foo("n", n);
-	foo("cn", n);
-	foo("std::move(n)", std::move(n));
-	foo("Nec{}", Nec{});
+	foo(nec);
+	foo(cnec);
+	foo(std::move(nec));
+	foo(Nec{});
+	foo(std::move(cnec));
 }
